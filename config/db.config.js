@@ -1,8 +1,8 @@
 const dbConfig = {
-    HOST : "localhost",
+    HOST : process.env.POSTGRES_HOST,
     USER : "postgres",
-    PASSWORD : "adetoyosi",
-    DB : "nodecloudinaryusers",
+    PASSWORD : process.env.POSTGRES_PASSWORD,
+    DB : process.env.POSTGRES_DBNAME,
     dialect : "postgres",
     // Pool is optional - For Sequelize connection pool
     pool : {
