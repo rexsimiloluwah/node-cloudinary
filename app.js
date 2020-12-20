@@ -7,9 +7,13 @@ const HttpError = require("./HttpError");
 const cors = require('cors');
 require('dotenv').config();
 const userRouter = require('./routes/users');
+const db = require('./models');
 
 // Initialize the Express app 
 const app = express();
+
+// Sync sequelize 
+db.sequelize.sync();
 
 // Middlewares and routes 
 app.use(cors());
