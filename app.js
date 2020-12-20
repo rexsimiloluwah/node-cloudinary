@@ -6,6 +6,7 @@ const path = require('path');
 const HttpError = require("./HttpError");
 const cors = require('cors');
 require('dotenv').config();
+const userRouter = require('./routes/users');
 
 // Initialize the Express app 
 const app = express();
@@ -20,6 +21,8 @@ if(process.env.NODE_ENV === "development"){
     app.use(morgan("dev"));
 }
 
+// Routes 
+app.use('/api/v1', userRouter);
 
 app.use( (req, res, next) => {
     const error = new HttpError("Could not find specified route.", 500);
