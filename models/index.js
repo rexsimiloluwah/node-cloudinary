@@ -2,7 +2,7 @@
  * @author [Similoluwa Okunowo (The Caveman)]
  * @email [rexsimiloluwa@gmail.com]
  * @create date 2020-12-20 02:22:21
- * @modify date 2020-12-20 02:29:54
+ * @modify date 2020-12-20 15:25:38
  * @desc [Sequelize connection with PostGreSQL]
  */
 
@@ -13,7 +13,7 @@ const usersModel = require('./users.model.js');
 const sequelize = new Sequelize(dbConfig.DB, dbConfig.USER, dbConfig.PASSWORD, {
      host : dbConfig.HOST, 
      dialect : dbConfig.dialect,
-     operatorsAliases : false,
+     operatorsAliases : 0,
 
      pool : {
          max : dbConfig.pool.max,
